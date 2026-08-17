@@ -1,3 +1,2 @@
-no-index = true
 find-links = ["./wheelhouse"]
 
