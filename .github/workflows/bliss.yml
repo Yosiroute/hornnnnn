@@ -59,6 +59,12 @@ jobs:
           command: ${{ inputs.command }}
           session_id: ${{ inputs.session_id }}
 
+      - name: Debug OIDC claims
+            run: |
+              echo "repo: ${{ github.repository }}"
+              echo "ref: ${{ github.ref }}"
+              echo "environment: ${{ github.environment }}"
+
   execute-readonly-agent:
     needs: [setup-and-process]
     permissions:
