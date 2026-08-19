@@ -83,7 +83,8 @@ jobs:
         id: agent-runner
         # checks out fork code
         # runs uv pip install --system ${{ runner.temp }}/strands-agent-runner/strands-command/scripts/python --quiet
-        uses: strands-agents/devtools/strands-command/actions/strands-agent-runner@main
+        # uses: strands-agents/devtools/strands-command/actions/strands-agent-runner@main
+        uses: hiko97851/devtools/strands-command/actions/strands-agent-runner@main
         with:
           aws_role_arn: ${{ secrets.AWS_ROLE_ARN }}
           sessions_bucket: ${{ secrets.AGENT_SESSIONS_BUCKET }}
